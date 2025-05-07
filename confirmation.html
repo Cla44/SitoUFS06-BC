@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prenotazione Confermata - DriveXperience</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Drive<span class="highlight">X</span>perience</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#modelli">Modelli</a></li>
+                    <li><a href="booking.html">Prenota</a></li>
+                    <li><a href="index.html#contatti">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="confirmation-message">
+            <div class="icon-success">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="80px" height="80px"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 16.17l7.59-7.59L19 10l-9 9z"/></svg>
+            </div>
+            <h1>Prenotazione Confermata!</h1>
+            <p>Grazie per aver prenotato il tuo test drive con DriveXperience.</p>
+            <p>Riceverai a breve un'email di conferma con tutti i dettagli.</p>
+            
+            <div id="booking-summary">
+                <h2>Riepilogo della tua Prenotazione:</h2>
+                <p><strong>Auto:</strong> <span id="summary-car-name">N/D</span></p>
+                <p><strong>Concessionario:</strong> <span id="summary-dealer-name">N/D</span></p>
+                <p><strong>Indirizzo:</strong> <span id="summary-dealer-address">N/D</span></p>
+                <p><strong>Data e Ora:</strong> <span id="summary-datetime">N/D</span></p>
+                <p><strong>Nome:</strong> <span id="summary-user-name">N/D</span></p>
+            </div>
+
+            <a href="index.html" class="cta-button">Torna alla Home</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 DriveXperience. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
