@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prenota Test Drive - DriveXperience</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Drive<span class="highlight">X</span>perience</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#modelli">Modelli</a></li>
+                    <li><a href="booking.html" class="active">Prenota</a></li>
+                    <li><a href="index.html#contatti">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="selected-car-info">
+            <h2>Stai per prenotare un test drive per:</h2>
+            <div class="car-details-booking">
+                <img id="booking-car-image" src="https://via.placeholder.com/300x180/333/fff?text=Auto+Scelta" alt="Auto Selezionata">
+                <h3 id="booking-car-name">Nome Auto Selezionata</h3>
+            </div>
+        </section>
+
+        <section id="dealer-search">
+            <h2>Trova il Concessionario più Vicino</h2>
+            <div class="form-group">
+                <label for="location-input">Inserisci la tua Città o CAP:</label>
+                <input type="text" id="location-input" placeholder="Es. Roma o 00100">
+                <button id="search-dealers-btn" class="cta-button">Cerca Concessionari</button>
+            </div>
+            <div id="map-placeholder">
+                <!-- Qui potrebbe andare una mappa interattiva -->
+                <p>La mappa dei concessionari apparirà qui.</p>
+            </div>
+            <div id="dealers-list">
+                <!-- I concessionari trovati verranno elencati qui -->
+            </div>
+        </section>
+
+        <section id="booking-form-section" style="display:none;">
+            <h2>Completa la Prenotazione</h2>
+            <form id="test-drive-form">
+                <input type="hidden" id="selected-car-id-form" name="carId">
+                <input type="hidden" id="selected-dealer-id-form" name="dealerId">
+                
+                <div class="form-group">
+                    <label for="dealer-name">Presso:</label>
+                    <input type="text" id="dealer-name-display" name="dealerNameDisplay" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="name">Nome Completo:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefono:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Data Desiderata:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Orario Preferito:</label>
+                    <select id="time" name="time" required>
+                        <option value="">Seleziona orario</option>
+                        <option value="09:00">09:00</option>
+                        <option value="10:00">10:00</option>
+                        <option value="11:00">11:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                    </select>
+                </div>
+                <button type="submit" class="cta-button">Conferma Prenotazione</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 DriveXperience. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
