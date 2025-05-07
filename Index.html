@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveXperience - Prenota il Tuo Test Drive</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Drive<span class="highlight">X</span>perience</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="#modelli">Modelli</a></li>
+                    <li><a href="booking.html" id="nav-booking-link" style="display:none;">Prenota</a></li>
+                    <li><a href="#contatti">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Senti la Potenza. Vivi l'Innovazione.</h1>
+            <p>Scegli il tuo prossimo veicolo e prenota un test drive esclusivo nel concessionario più vicino.</p>
+            <a href="#modelli" class="cta-button">Scopri i Modelli</a>
+        </div>
+    </section>
+
+    <main class="container">
+        <section id="modelli">
+            <h2>Scegli il Tuo Prossimo Sogno</h2>
+            <div class="car-grid">
+                <!-- Auto verranno popolate da JS o inserite staticamente -->
+                <div class="car-card" data-car-id="suv-elettrico" data-car-name="SUV Elettrico Avanzato" data-car-image="https://via.placeholder.com/400x250/333/fff?text=SUV+Elettrico">
+                    <img src="https://via.placeholder.com/400x250/333/fff?text=SUV+Elettrico" alt="SUV Elettrico Avanzato">
+                    <h3>SUV Elettrico Avanzato</h3>
+                    <p>Performance elettrizzanti e design futuristico.</p>
+                    <button class="select-car-btn">Scegli e Prenota</button>
+                </div>
+                <div class="car-card" data-car-id="sportiva-ibrida" data-car-name="Sportiva Ibrida Veloce" data-car-image="https://via.placeholder.com/400x250/444/fff?text=Sportiva+Ibrida">
+                    <img src="https://via.placeholder.com/400x250/444/fff?text=Sportiva+Ibrida" alt="Sportiva Ibrida Veloce">
+                    <h3>Sportiva Ibrida Veloce</h3>
+                    <p>Adrenalina pura con efficienza ibrida.</p>
+                    <button class="select-car-btn">Scegli e Prenota</button>
+                </div>
+                <div class="car-card" data-car-id="citycar-smart" data-car-name="CityCar Smart Connect" data-car-image="https://via.placeholder.com/400x250/555/fff?text=CityCar+Smart">
+                    <img src="https://via.placeholder.com/400x250/555/fff?text=CityCar+Smart" alt="CityCar Smart Connect">
+                    <h3>CityCar Smart Connect</h3>
+                    <p>Agile, connessa e perfetta per la città.</p>
+                    <button class="select-car-btn">Scegli e Prenota</button>
+                </div>
+                 <div class="car-card" data-car-id="berlina-lusso" data-car-name="Berlina di Lusso Tech" data-car-image="https://via.placeholder.com/400x250/222/fff?text=Berlina+Lusso">
+                    <img src="https://via.placeholder.com/400x250/222/fff?text=Berlina+Lusso" alt="Berlina di Lusso Tech">
+                    <h3>Berlina di Lusso Tech</h3>
+                    <p>Eleganza e tecnologia di ultima generazione.</p>
+                    <button class="select-car-btn">Scegli e Prenota</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contatti">
+            <h2>Contattaci</h2>
+            <p>Per qualsiasi informazione, non esitare a scriverci: <a href="mailto:info@drivexperience.com">info@drivexperience.com</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 DriveXperience. Tutti i diritti riservati.</p>
+            <p>Un progetto demo con HTML, CSS e JavaScript.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
