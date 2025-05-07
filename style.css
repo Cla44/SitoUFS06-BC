@@ -1,0 +1,410 @@
+/* Global Styles & Reset */
+:root {
+    --primary-color: #0D1B2A; /* Blu scuro tecnologico */
+    --secondary-color: #1B263B; /* Blu leggermente più chiaro */
+    --accent-color: #00A6FB; /* Blu acceso per accenti */
+    --text-color: #E0E1DD; /* Grigio chiaro per testo */
+    --highlight-color: #FF4E00; /* Arancione/Rosso per highlight */
+    --card-bg: #2c3e50; /* Sfondo card */
+
+    --font-primary: 'Orbitron', sans-serif; /* Tecnologico per titoli */
+    --font-secondary: 'Roboto', sans-serif; /* Leggibile per testo */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-secondary);
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+main {
+    flex-grow: 1;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-primary);
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.6em; color: var(--text-color); } /* Colore diverso per h3 nelle card */
+
+p {
+    margin-bottom: 15px;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--highlight-color);
+}
+
+/* Header */
+header {
+    background-color: var(--secondary-color);
+    padding: 15px 0;
+    border-bottom: 3px solid var(--accent-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Padding orizzontale per il container dell'header */
+}
+
+.logo {
+    font-family: var(--font-primary);
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.logo .highlight {
+    color: var(--highlight-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+nav ul li a.active,
+nav ul li a:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    text-shadow: none;
+}
+
+/* Hero Section */
+#hero {
+    background: url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNhcnN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1000&q=60') no-repeat center center/cover;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    color: #fff;
+}
+
+#hero::before { /* Overlay per leggibilità testo */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: #fff; /* H1 in hero bianco */
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 12px 25px;
+    font-family: var(--font-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.cta-button:hover {
+    background-color: var(--highlight-color);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Car Grid */
+#modelli {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.car-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.car-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(var(--accent-color-rgb), 0.3); /* Usa accent color con trasparenza */
+}
+
+.car-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--accent-color);
+}
+
+.car-card h3 {
+    padding: 15px 15px 5px 15px;
+    font-size: 1.4em;
+    color: var(--text-color);
+}
+
+.car-card p {
+    padding: 0 15px 15px 15px;
+    font-size: 0.9em;
+    flex-grow: 1;
+}
+
+.car-card button.select-car-btn {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-family: var(--font-primary);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.car-card button.select-car-btn:hover {
+    background-color: var(--highlight-color);
+    color: #fff;
+}
+
+/* Booking Page Specifics */
+#selected-car-info, #dealer-search, #booking-form-section, #confirmation-message {
+    background-color: var(--secondary-color);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+.car-details-booking {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.car-details-booking img {
+    border-radius: 5px;
+    border: 2px solid var(--accent-color);
+}
+
+#map-placeholder {
+    height: 300px;
+    background-color: var(--primary-color);
+    border: 1px solid var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    border-radius: 5px;
+    color: var(--text-color);
+}
+
+#dealers-list .dealer-item {
+    background-color: var(--card-bg);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 5px solid var(--accent-color);
+}
+.dealer-item p { margin-bottom: 5px; }
+
+/* Forms */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    border: 1px solid var(--accent-color);
+    color: var(--text-color);
+    border-radius: 5px;
+    font-family: var(--font-secondary);
+    font-size: 1em;
+}
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group input[type="date"]:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--highlight-color);
+    box-shadow: 0 0 5px rgba(var(--highlight-color-rgb), 0.5); /* Usa highlight color con trasparenza */
+}
+.form-group input[readonly] {
+    background-color: var(--secondary-color);
+    cursor: not-allowed;
+}
+
+/* Confirmation Page */
+#confirmation-message {
+    text-align: center;
+}
+.icon-success svg {
+    fill: #2ecc71; /* Verde successo */
+    margin-bottom: 20px;
+}
+#booking-summary {
+    background-color: var(--primary-color);
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 5px;
+    text-align: left;
+    border: 1px solid var(--accent-color);
+}
+#booking-summary h2 {
+    text-align: center;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+#booking-summary p {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+#booking-summary p strong {
+    color: var(--accent-color);
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: #aaa;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 3px solid var(--accent-color);
+    margin-top: auto; /* Spinge il footer in basso */
+}
+footer p {
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+/* Utility for dynamic accent color RGB for box-shadow */
+:root {
+    /* ... existing variables ... */
+    --accent-color-rgb: 0, 166, 251; /* RGB for #00A6FB */
+    --highlight-color-rgb: 255, 78, 0; /* RGB for #FF4E00 */
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-content h1 { font-size: 2.5em; }
+    .hero-content p { font-size: 1em; }
+    
+    header .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul {
+        margin-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    nav ul li {
+        margin: 5px 10px;
+    }
+
+    .car-grid {
+        grid-template-columns: 1fr; /* Stack cards on smaller screens */
+    }
+    .car-details-booking {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .dealer-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .dealer-item button {
+        margin-top: 10px;
+        width: 100%;
+    }
+}
